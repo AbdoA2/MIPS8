@@ -1,0 +1,134 @@
+module Controller(clk, rst,
+                  instr, INTR, seg,
+                  enPC, enIR, enData, enFlags, we,
+                  addrSrc, PCsrc, regSrc, regDst, srcA, srcB,
+                  aluop, cin, mem_we, JR,
+                  CF, VF, ZF, SF);
+  //define inputs and outputs
+  input clk, rst;
+  input CF, VF, ZF, SF;
+  input[15:0] instr;
+  input[1:0] INTR;
+  output enPC, enData, we, cin, enFlags, PCsrc, mem_we, seg, JR;
+  output[1:0] srcB, addrSrc, enIR, regDst, srcA;
+  output[2:0] aluop, regSrc; 
+  
+  // define states
+  parameter[4:0] FETCH_IR1 = 5'b0000, // fetch instruction first byte
+                 FETCH_IR2 = 5'b0001,
+                 DECODE = 5'b0010, // decode instruction
+                 EXECUTE = 5'b0011,  // execute instruction
+                 BR_JMP = 5'b0100, // branch 
+                 WB_R = 5'b0101,
+                 MOV = 5'b0110,
+                 STI = 5'b0111,
+                 LDI = 5'b1000,
+                 STD = 5'b1001,
+                 LDD = 5'b1010,
+                 WB_MEM = 5'b1011,
+                 IMM_OP = 5'B1100,
+                 EXEC_LOOP = 5'b1101,
+                 INC_ADDR = 5'b1110,
+                 DEC_ADDR = 5'b1111,
+                 WB_ADDR = 5'b10000;
+  
+  reg[3:0] state, next_state;
+  reg[23:0] control_word;
+  wire[2:0] ra, funct;
+  wire rb;
+  wire[3:0] opcode;
+    
+  // assign state
+  always @ (posedge clk, posedge rst)
+    begin
+      if (rst == 1'b1)
+        state <= FETCH_IR1;
+      else
+        state <= next_state;
+    end
+     
+  // some assignments
+  assign opcode = instr[15:12];
+  assign funct = instr[2:0];
+  assign {ra, rb} = instr[11:8];
+  assign Cin = (opcode == 4'b0 & ((funct == 3'b011 & rb == 1'b1) | instr[3] == 1'b1)) | (funct == 3'b1) |(opcode == 4'b0111 & CF);
+  assign BR = (ra == 3'b0 & ZF) | (ra == 3'b1 & ~ZF) | (ra == 3'b10 & VF) | (ra == 3'b11 & SF);
+  assign JAL = (ra == 3'b100);
+  assign JMP = (ra == 3'b101);
+  assign pcEn = JAL | JMP | BR;
+  
+  // next state logic
+  always @ (state)
+    begin
+      case(state)
+        FETCH_IR1: next_state = FETCH_IR2;
+        FETCH_IR2: next_state = DECODE;
+        DECODE: if (opcode == 4'b0 || opcode == 4'b111)
+                  next_state = EXECUTE;
+                else if (opcode == 4'd13)
+                  next_state = BR_JMP;
+                else if (opcode == 4'b10 | opcode == 4'b1)
+                  next_state = MOV;
+                else if (opcode == 4'b011)
+                  if (rb == 1'b1)
+                    next_state = STD;
+                  else
+                    next_state = LDD;
+                else if (opcode == 4'b100)
+                  if (funct == 3'b001 | funct == 3'b011)
+                    next_state = STI;
+                  else if (funct == 3'b101 | funct == 3'b100)
+                    next_state = DEC_ADDR;
+                  else 
+                    next_state = LDI;
+                else if (opcode == 4'b0101)
+                  next_state = IMM_OP;
+                else if (opcode == 4'b1110)
+                  next_state = EXEC_LOOP;
+                  
+        EXECUTE: next_state = instr[3]? FETCH_IR1: WB_R;
+        WB_R: next_state = FETCH_IR1;
+        BR_JMP: next_state = FETCH_IR1;
+        MOV: next_state = FETCH_IR1;
+        STI: next_state = (funct == 3'b011)? WB_ADDR: FETCH_IR1;
+        LDI: next_state = WB_MEM;
+        STD: next_state = FETCH_IR1;
+        LDD: next_state = WB_MEM;
+        WB_MEM: next_state = (funct == 3'b010)? INC_ADDR: FETCH_IR1;
+        IMM_OP: next_state = WB_R;
+        EXEC_LOOP: next_state = WB_R;
+        DEC_ADDR: next_state = WB_ADDR;
+        INC_ADDR: next_state = WB_ADDR;
+        WB_ADDR: next_state = (funct == 3'b100)? LDI: ((funct == 3'b101)? STI: FETCH_IR1);
+      endcase
+    end
+    
+    
+    // control word
+    always @ (state)
+      begin
+        case(state)
+          FETCH_IR1: control_word <= 24'b101000000000000101000000; // assert (enPC, enIR(1)), Add (PC, 1) addrSrc = PC
+          FETCH_IR2: control_word <= 24'b110000000000000101000000; // assert (enPC, enIR(2)), Add (PC, 1) addrSrc = PC
+          DECODE:    control_word <= 24'b000000000000000000000000; // do nothing just wait for register file outputs
+          EXECUTE:   control_word <= {18'b000010000000000000, funct, Cin, 2'b00}; // assert (enFlags), aluop, srcA = R[ra], srcB = R[rb]
+          WB_R:      control_word <= {~ZF & opcode == 4'b1110, 23'b00001000000000110000000};  // assert we, regDst = ra, regSrc = ALUOut, srcA = pc, ssB = immm, Add
+          BR_JMP:    control_word <= {pcEn, 4'b0000, JAL, 2'b00, JAL | JMP, JAL, 3'b000, JAL, 10'b0110000000};
+          MOV:       control_word <= {11'b00000100001, ~opcode[0], 12'b000000000000}; // assert we, regDst = ra, regSrc = imm/rb
+          STI:       control_word <= 24'b000000010000001001000011;  // assert mem_we, seg = data_mem, addrSrc = b
+          STD:       control_word <= 24'b000000100000000000000011;  // assert mem_we, seg = data_mem, addrSrc = ea
+          LDD:       control_word <= 24'b000100100000000000000001;  // assert enData, seg = data_mem, addrSrc = ea
+          WB_MEM:    control_word <= 24'b000001000001000000000000;  // assert we, regDst = ra, regSrc = data
+          LDI:       control_word <= 24'b000100010000000000000001; // asser enData, seg = data_mem, addrSrc = b;
+          IMM_OP:    control_word <= {18'b000010000000000010, rb, 5'b00000}; // assert enFlags, srcA = ra, srcB = imm, regDst = ra
+          EXEC_LOOP: control_word <= 24'b000010000000000001001100;  // assert enFlags, srcA = ra, srcB = 1, Sub, cin = 1
+          DEC_ADDR:  control_word <= 24'b000000000000001001001100;  // srcA = b, srcB = 1, Sub
+          WB_ADDR:   control_word <= 24'b000001000000100000000000;  // assert we, regDst = 10
+          INC_ADDR:  control_word <= 24'b000000000000001001000000;  // srcA = b, srcB = 1, Add
+        endcase
+      end
+      
+      // asign control signals           
+      assign {enPC, enIR, enData, enFlags, we, addrSrc, PCsrc, regSrc, regDst, srcA, srcB, aluop, cin, mem_we, seg} = control_word;
+      assign JR = opcode == 4'b1101 & ra == 3'b110;
+endmodule

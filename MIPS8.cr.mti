@@ -1,0 +1,85 @@
+F:/Projects/Verilog/MIPS8/Datapath.v {1 {vlog -work work F:/Projects/Verilog/MIPS8/Datapath.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Datapath
+
+Top level modules:
+	Datapath
+
+} {} {}} F:/Projects/Verilog/MIPS8/ALU.v {1 {vlog -work work F:/Projects/Verilog/MIPS8/ALU.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} F:/Projects/Verilog/MIPS8/flopr.v {1 {vlog -work work F:/Projects/Verilog/MIPS8/flopr.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module flopr
+
+Top level modules:
+	flopr
+
+} {} {}} F:/Projects/Verilog/MIPS8/FullAdder.v {1 {vlog -work work F:/Projects/Verilog/MIPS8/FullAdder.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module FullAdder
+
+Top level modules:
+	FullAdder
+
+} {} {}} F:/Projects/Verilog/MIPS8/floprIR.v {1 {vlog -work work F:/Projects/Verilog/MIPS8/floprIR.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module floprIR
+
+Top level modules:
+	floprIR
+
+} {} {}} F:/Projects/Verilog/MIPS8/RegFile.v {1 {vlog -work work F:/Projects/Verilog/MIPS8/RegFile.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module RegFile
+
+Top level modules:
+	RegFile
+
+} {} {}} F:/Projects/Verilog/MIPS8/RAM.v {1 {vlog -work work F:/Projects/Verilog/MIPS8/RAM.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module RAM
+
+Top level modules:
+	RAM
+
+} {} {}} F:/Projects/Verilog/MIPS8/Testbench.v {1 {vlog -work work F:/Projects/Verilog/MIPS8/Testbench.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Testbench
+
+Top level modules:
+	Testbench
+
+} {} {}} F:/Projects/Verilog/MIPS8/Adder.v {1 {vlog -work work F:/Projects/Verilog/MIPS8/Adder.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Adder
+
+Top level modules:
+	Adder
+
+} {} {}} F:/Projects/Verilog/MIPS8/MIPS.v {1 {vlog -work work F:/Projects/Verilog/MIPS8/MIPS.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module MIPS8
+
+Top level modules:
+	MIPS8
+
+} {} {}} F:/Projects/Verilog/MIPS8/Top.v {1 {vlog -work work F:/Projects/Verilog/MIPS8/Top.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Top
+
+Top level modules:
+	Top
+
+} {} {}} F:/Projects/Verilog/MIPS8/Controller.v {1 {vlog -work work F:/Projects/Verilog/MIPS8/Controller.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Controller
+
+Top level modules:
+	Controller
+
+} {} {}}

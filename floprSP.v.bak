@@ -1,0 +1,18 @@
+module flopr(clk, rst, en, d, q);
+  // define inputs and outputs
+  input clk, rst, en;
+  input[7:0] d;
+  output[7:0] q;
+  
+  // sequential output
+  reg[7:0] q;
+  
+  always @(posedge clk, rst) 
+    begin
+      if (rst == 1)
+        q <= 8'hff;
+      else
+        q <= d;
+    end
+endmodule
+

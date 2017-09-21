@@ -1,0 +1,302 @@
+m255
+K3
+13
+cModel Technology
+Z0 dF:\Projects\VHDL\PDP11
+vAdder
+Z1 IZWDXm2S`JF1OkIen[FY8b3
+Z2 Vz=Pb<2LGQa:GdZ2[=Q[]e2
+Z3 dF:\Projects\Verilog\MIPS8
+Z4 w1451511034
+Z5 8F:/Projects/Verilog/MIPS8/Adder.v
+Z6 FF:/Projects/Verilog/MIPS8/Adder.v
+L0 1
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -reportprogress|300|-work|work|F:/Projects/Verilog/MIPS8/Adder.v|
+Z9 o-work work -O0
+Z10 n@adder
+Z11 !s100 a@;42:9ZJTlzOW_SQdCFg0
+Z12 !s108 1451511040.897000
+Z13 !s107 F:/Projects/Verilog/MIPS8/Adder.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vALU
+Z14 !s100 <gF<@gccO8Vz`h[TBonnS2
+Z15 InaYc4YmBz2Wi]V@mi7f0O1
+Z16 V8QSN]EYoS>9nJJj07Z;Y33
+R3
+Z17 w1451429385
+Z18 8F:/Projects/Verilog/MIPS8/ALU.v
+Z19 FF:/Projects/Verilog/MIPS8/ALU.v
+L0 1
+R7
+r1
+31
+Z20 !s90 -reportprogress|300|-work|work|F:/Projects/Verilog/MIPS8/ALU.v|
+R9
+Z21 n@a@l@u
+Z22 !s108 1451429389.670000
+Z23 !s107 F:/Projects/Verilog/MIPS8/ALU.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vController
+Z24 IzH`iLkH9Sof>F9?M>3MQc3
+Z25 VXHY7klH=CWV9D0Ko[bfLd3
+R3
+Z26 w1451915897
+Z27 8F:/Projects/Verilog/MIPS8/Controller.v
+Z28 FF:/Projects/Verilog/MIPS8/Controller.v
+L0 1
+R7
+r1
+31
+Z29 !s90 -reportprogress|300|-work|work|F:/Projects/Verilog/MIPS8/Controller.v|
+R9
+Z30 n@controller
+Z31 !s100 `gVnPX;a;S4N0ZQhnOo>c0
+Z32 !s108 1451915901.338000
+Z33 !s107 F:/Projects/Verilog/MIPS8/Controller.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vcontroller
+Z34 I<=WG7[zdjiYSWH2=I_@ik3
+Z35 VI:_UI1ecfk^W=jNd=_LzO0
+R3
+Z36 w1451509838
+R27
+R28
+L0 1
+R7
+r1
+31
+R29
+R9
+Z37 !s100 EnG56kR;M`R7DQnZOT7]=2
+Z38 !s108 1451509843.962000
+R33
+!i10b 1
+!s85 0
+!s101 -O0
+vDatapath
+Z39 IZ]YY4`:ReH`TOncAca3bH1
+Z40 V6_bWf4`[LoIISfdd``QQc3
+R3
+Z41 w1451915415
+Z42 8F:/Projects/Verilog/MIPS8/Datapath.v
+Z43 FF:/Projects/Verilog/MIPS8/Datapath.v
+L0 1
+R7
+r1
+31
+Z44 !s90 -reportprogress|300|-work|work|F:/Projects/Verilog/MIPS8/Datapath.v|
+R9
+Z45 n@datapath
+Z46 !s100 dCZ6`f44VjEani1?Y9`z<2
+Z47 !s108 1451915607.209000
+Z48 !s107 F:/Projects/Verilog/MIPS8/Datapath.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vflopr
+Z49 Ia=nMU^<D`aX^ZK?@?5V?i2
+Z50 V:Q<TGl2kiiQG4d=;?RPDW0
+R3
+Z51 w1451597115
+Z52 8F:/Projects/Verilog/MIPS8/flopr.v
+Z53 FF:/Projects/Verilog/MIPS8/flopr.v
+L0 1
+R7
+r1
+31
+Z54 !s90 -reportprogress|300|-work|work|F:/Projects/Verilog/MIPS8/flopr.v|
+R9
+Z55 !s100 Z_^MNZ63;[DANVV1OB1AU3
+Z56 !s108 1451597122.579000
+Z57 !s107 F:/Projects/Verilog/MIPS8/flopr.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vfloprIR
+Z58 Im1cZaVeJ:]?X6mNBAF5fl3
+Z59 VfIVZ`@?z2ZDf;Y6Dm^59F2
+R3
+Z60 w1451597160
+Z61 8F:/Projects/Verilog/MIPS8/floprIR.v
+Z62 FF:/Projects/Verilog/MIPS8/floprIR.v
+L0 1
+R7
+r1
+31
+Z63 !s90 -reportprogress|300|-work|work|F:/Projects/Verilog/MIPS8/floprIR.v|
+R9
+Z64 nflopr@i@r
+Z65 !s100 Vdjh2fUGn<;ToMk:be^RT0
+Z66 !s108 1451597168.603000
+Z67 !s107 F:/Projects/Verilog/MIPS8/floprIR.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vfloprSP
+Z68 I5zGK9JW8aD:GlKR5;Z@FM3
+Z69 VL88]n4SPGL8:cWRChP`E@2
+R3
+Z70 w1451510085
+Z71 8F:/Projects/Verilog/MIPS8/floprSP.v
+Z72 FF:/Projects/Verilog/MIPS8/floprSP.v
+L0 1
+R7
+r1
+31
+R9
+Z73 nflopr@s@p
+Z74 !s100 4nG@9k@bPiHcR=UIBjb7G2
+Z75 !s108 1451510089.822000
+Z76 !s107 F:/Projects/Verilog/MIPS8/floprSP.v|
+Z77 !s90 -reportprogress|300|-work|work|F:/Projects/Verilog/MIPS8/floprSP.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vFullAdder
+Z78 IeDBFmCL`X@?DQ?mXW^L:g1
+Z79 Vg;9>ezg?<CUD]ZShjSl=_1
+R3
+Z80 w1451423018
+Z81 8F:/Projects/Verilog/MIPS8/FullAdder.v
+Z82 FF:/Projects/Verilog/MIPS8/FullAdder.v
+L0 1
+R7
+r1
+31
+R9
+Z83 n@full@adder
+Z84 !s100 XVmzFicQCj59SdjdI0JAz2
+Z85 !s108 1451423027.033000
+Z86 !s107 F:/Projects/Verilog/MIPS8/FullAdder.v|
+Z87 !s90 -reportprogress|300|-work|work|F:/Projects/Verilog/MIPS8/FullAdder.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vMIPS8
+Z88 IM7F0co^VRc>UM;5cI3_Pb3
+Z89 VTdB0M`]YZ9l;[=G2jReT00
+R3
+Z90 w1451911438
+Z91 8F:/Projects/Verilog/MIPS8/MIPS.v
+Z92 FF:/Projects/Verilog/MIPS8/MIPS.v
+L0 1
+R7
+r1
+31
+Z93 !s90 -reportprogress|300|-work|work|F:/Projects/Verilog/MIPS8/MIPS.v|
+R9
+Z94 n@m@i@p@s8
+Z95 !s100 KSCm24kUm3NEY4:5S]UGZ2
+Z96 !s108 1451911443.578000
+Z97 !s107 F:/Projects/Verilog/MIPS8/MIPS.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vRAM
+!i10b 1
+!s100 0M]Q5oFo1ObAcZ[;0IN6O2
+INOOhn1`gUE<8Xd`[;YzU43
+Z98 VfI92W<EARHAR]f0WPJ<>K0
+R3
+w1451917553
+Z99 8F:/Projects/Verilog/MIPS8/RAM.v
+Z100 FF:/Projects/Verilog/MIPS8/RAM.v
+L0 1
+R7
+r1
+!s85 0
+31
+!s108 1451917564.951000
+!s107 F:/Projects/Verilog/MIPS8/RAM.v|
+Z101 !s90 -reportprogress|300|-work|work|F:/Projects/Verilog/MIPS8/RAM.v|
+!s101 -O0
+R9
+Z102 n@r@a@m
+vRegFile
+Z103 I6ZWFXk7dUI?bZ_@MPEg=23
+Z104 VSA8CYbFIDVe=Y_CX[]4=Y3
+R3
+Z105 w1451510866
+Z106 8F:/Projects/Verilog/MIPS8/RegFile.v
+Z107 FF:/Projects/Verilog/MIPS8/RegFile.v
+L0 1
+R7
+r1
+31
+Z108 !s90 -reportprogress|300|-work|work|F:/Projects/Verilog/MIPS8/RegFile.v|
+R9
+Z109 n@reg@file
+Z110 !s100 :6kckiE3BlI>WHoeMd>Qi3
+Z111 !s108 1451510873.387000
+Z112 !s107 F:/Projects/Verilog/MIPS8/RegFile.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vTestbench
+Z113 IA050]Nh^QF7mdYQz4[S@C3
+Z114 VGdUiEZgaMiVEi@bgHJeE13
+R3
+Z115 w1451603182
+Z116 8F:/Projects/Verilog/MIPS8/Testbench.v
+Z117 FF:/Projects/Verilog/MIPS8/Testbench.v
+L0 1
+R7
+r1
+31
+Z118 !s90 -reportprogress|300|-work|work|F:/Projects/Verilog/MIPS8/Testbench.v|
+R9
+Z119 n@testbench
+Z120 !s100 Ig<hA0GnFo:@WW3b`hUz03
+Z121 !s108 1451603191.488000
+Z122 !s107 F:/Projects/Verilog/MIPS8/Testbench.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vTop
+Z123 IZCjJMm?LZ@mloh9XT3FGo1
+Z124 VzWA6l7Y0?KB;F2J2f^cJZ0
+R3
+Z125 w1451759905
+Z126 8F:/Projects/Verilog/MIPS8/Top.v
+Z127 FF:/Projects/Verilog/MIPS8/Top.v
+L0 1
+R7
+r1
+31
+Z128 !s90 -reportprogress|300|-work|work|F:/Projects/Verilog/MIPS8/Top.v|
+R9
+n@top
+Z129 !s100 006hJk5D2Bn^Y0E@<?]z?1
+Z130 !s108 1451759913.066000
+Z131 !s107 F:/Projects/Verilog/MIPS8/Top.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vtop
+Z132 IgM1l1^>VbKZFSdiN<C`2G3
+Z133 Vd8En_^go]Gb:WmNQLW@8W1
+R3
+Z134 w1451593535
+R126
+R127
+L0 1
+R7
+r1
+31
+R128
+R9
+Z135 !s100 5OkZMN`DhCaHE_dC^Mg@03
+Z136 !s108 1451593538.536000
+R131
+!i10b 1
+!s85 0
+!s101 -O0
